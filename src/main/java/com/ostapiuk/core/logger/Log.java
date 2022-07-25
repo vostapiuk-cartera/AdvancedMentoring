@@ -19,7 +19,7 @@ public class Log {
         try (FileInputStream istream = new FileInputStream("src/main/resources/log4j.properties")) {
             props.load(istream);
         } catch (Exception e) {
-            e.printStackTrace();
+            getLogger().trace(e);
         }
         PropertyConfigurator.configure(props);
         return logger;
