@@ -1,0 +1,21 @@
+{
+  "data": {
+    "portalVersion": "5.7.2",
+    "successLogin": "Signed in successfully",
+    "dashboardName": "Epam",
+    "dashboardDescription": "Dashboard for test",
+    "dashboardNewName": "Test"
+  },
+  "users": [
+    {
+      "email": "default",
+      "password": "1q2w3e",
+      "expected": true
+    },
+    {
+      "email": "superadmin",
+      "password": "erebus",
+      "expected": true
+    }
+  ]
+}
