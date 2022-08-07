@@ -30,6 +30,10 @@ public class SettingsPage extends BasePage {
         return dropdown.get(random.nextInt(dropdown.size()));
     }
 
+    public WebElement getFirstDropdown() {
+        return dropdown.get(0);
+    }
+
     public String getDropdownValue(WebElement dropdown) {
         return dropdown.getText();
     }
