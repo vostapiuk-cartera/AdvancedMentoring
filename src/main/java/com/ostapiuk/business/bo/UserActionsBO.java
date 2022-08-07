@@ -28,7 +28,7 @@ public class UserActionsBO {
     }
 
     public void changeGeneralSettings() {
-        WebElement dropdown = settingsPage.getRandomDropdown();
+        WebElement dropdown = settingsPage.getFirstDropdown();
         String oldValue = settingsPage.getDropdownValue(dropdown);
         settingsPage.clickDropdown(dropdown);
         settingsPage.selectNewRandomDropdownOption(oldValue);
