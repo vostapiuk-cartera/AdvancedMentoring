@@ -37,4 +37,12 @@ public class ConfigProperties {
     public static String getDataSourceProperty() {
         return getProperty("data_source");
     }
+
+    public static String getWindowsDriverNameProperty() {
+        return getProperty("windows_driver_name");
+    }
+
+    public static String getLinuxDriverNameProperty() {
+        return getProperty("linux_driver_name");
+    }
 }
