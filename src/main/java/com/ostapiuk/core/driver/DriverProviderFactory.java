@@ -14,7 +14,9 @@ public enum DriverProviderFactory {
         public WebDriver create() {
 //            new ChromeDriverLoader().loadChromeDriver();
             WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
-            ChromeOptions options = new ChromeOptions().setHeadless(true);
+            ChromeOptions options = new ChromeOptions();
+//            ChromeOptions options = new ChromeOptions().setHeadless(true);
+            options.addArguments("--whitelisted-ips=''");
             options.setPageLoadStrategy(PageLoadStrategy.EAGER);
             return new ChromeDriver(options);
         }
