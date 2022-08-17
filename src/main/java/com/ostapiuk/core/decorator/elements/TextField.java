@@ -3,7 +3,6 @@ package com.ostapiuk.core.decorator.elements;
 import com.ostapiuk.core.decorator.BaseElement;
 import com.ostapiuk.core.driver.Wait;
 import com.ostapiuk.core.logger.Log;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 public class TextField extends BaseElement {
@@ -18,12 +17,11 @@ public class TextField extends BaseElement {
         webElement.sendKeys(text);
     }
 
-    public void typeAndEnter(String text) {
-        Log.log("Typing and entering textField value: " + text);
+    public void typeText(String text) {
+        Log.log("Typing textField value: " + text);
         Wait.waitOnElementToBeClickable(webElement);
         webElement.clear();
         webElement.sendKeys(text);
-        webElement.sendKeys(Keys.ENTER);
     }
 
     public void click() {

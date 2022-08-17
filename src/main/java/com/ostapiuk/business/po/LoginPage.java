@@ -16,11 +16,11 @@ public class LoginPage extends BasePage {
     private Button loginButton;
 
     public void enterEmail(String email) {
-        emailInput.typeAndEnter(email);
+        emailInput.typeText(email);
     }
 
     public void enterPassword(String password) {
-        passwordInput.typeAndEnter(password);
+        passwordInput.typeText(password);
     }
 
     public void clickLoginButton() {

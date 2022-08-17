@@ -24,11 +24,11 @@ public class CreateDashboardPage extends BasePage {
     private WebElement dashboardSection;
 
     public void enterName(String name) {
-        nameField.typeAndEnter(name);
+        nameField.typeText(name);
     }
 
     public void enterDescription(String description) {
-        descriptionField.typeAndEnter(description);
+        descriptionField.typeText(description);
     }
 
     public void clickAddButton() {
