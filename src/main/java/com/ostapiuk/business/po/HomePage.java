@@ -31,7 +31,7 @@ public class HomePage extends BasePage {
     }
 
     public void clickAddDashboardButton() {
-        addDashboardButton.click();
+        addDashboardButton.clickAfterWait();
     }
 
     public boolean isInDashboardList(String dashboardName) {

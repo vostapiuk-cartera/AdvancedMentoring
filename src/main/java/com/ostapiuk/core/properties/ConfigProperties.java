@@ -37,4 +37,8 @@ public class ConfigProperties {
     public static String getDataSourceProperty() {
         return getProperty("data_source");
     }
+
+    public static String getDriverUrlProperty() {
+        return getProperty("driver_url");
+    }
 }
