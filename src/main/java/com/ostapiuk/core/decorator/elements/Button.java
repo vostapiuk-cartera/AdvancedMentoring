@@ -16,4 +16,9 @@ public class Button extends BaseElement {
         Wait.waitOnElementToBeClickable(webElement);
         webElement.click();
     }
+
+    public void clickAfterWait() {
+        Log.log("Clicking on button after wait");
+        Wait.waitOnElementUntilClick(webElement);
+    }
 }
