@@ -1,5 +1,6 @@
 package com.ostapiuk.core.utils;
 
+import com.ostapiuk.core.logger.Log;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.openqa.selenium.OutputType;
@@ -12,13 +13,17 @@ import java.util.Date;
 
 public class ScreenshotUtils {
 
+    private ScreenshotUtils() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static void getScreenshot(WebDriver driver, String testName) {
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         String screenName = testName + DateFormatUtils.format(new Date(),"yyyy-MM-dd-hh-mm") + ".png";
         try {
             FileUtils.copyFile(scrFile, new File("screen\\"+screenName));
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.getLogger().trace(e);
         }
     }
 }

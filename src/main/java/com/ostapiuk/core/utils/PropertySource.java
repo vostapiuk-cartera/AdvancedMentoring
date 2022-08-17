@@ -1,5 +1,7 @@
 package com.ostapiuk.core.utils;
 
+import com.ostapiuk.core.logger.Log;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
@@ -18,7 +20,7 @@ public class PropertySource {
             properties.load(Objects.requireNonNull(inputStream));
             return properties.getProperty(key);
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.getLogger().trace(e);
             return null;
         }
     }

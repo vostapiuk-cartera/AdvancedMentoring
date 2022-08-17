@@ -1,8 +1,7 @@
 package com.ostapiuk.core.driver;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.DriverManagerType;
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,7 +12,7 @@ public enum DriverProviderFactory {
     CHROME {
         @Override
         public WebDriver create() {
-            ChromeDriverManager.getInstance(DriverManagerType.CHROME).setup();
+            WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
             ChromeOptions options = new ChromeOptions();
             options.setPageLoadStrategy(PageLoadStrategy.EAGER);
             return new ChromeDriver(options);
@@ -21,7 +20,7 @@ public enum DriverProviderFactory {
     }, FIREFOX {
         @Override
         public WebDriver create() {
-            FirefoxDriverManager.getInstance(DriverManagerType.FIREFOX).setup();
+            WebDriverManager.getInstance(DriverManagerType.FIREFOX).setup();
             return new FirefoxDriver();
         }
     };

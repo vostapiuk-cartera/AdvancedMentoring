@@ -8,12 +8,12 @@ public class DriverWaitProvider {
     private static final int EXPLICIT_WAIT = ConfigProperties.getExplicitWait();
 
     private DriverWaitProvider() {
-        webDriverWait = new WebDriverWait(DriverProvider.getDriver(), EXPLICIT_WAIT);
+
     }
 
     public static WebDriverWait getInstance() {
         if (webDriverWait == null) {
-            new DriverWaitProvider();
+            webDriverWait = new WebDriverWait(DriverProvider.getDriver(), EXPLICIT_WAIT);
         }
         return webDriverWait;
     }

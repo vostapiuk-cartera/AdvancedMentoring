@@ -2,11 +2,13 @@ package com.ostapiuk.business.po;
 
 import com.ostapiuk.core.decorator.elements.Button;
 import com.ostapiuk.core.driver.Wait;
+import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.security.SecureRandom;
 import java.util.List;
-import java.util.Random;
+import java.util.Optional;
 
 public class SettingsPage extends BasePage {
 
@@ -22,7 +24,7 @@ public class SettingsPage extends BasePage {
     @FindBy(css = "button[type='submit']")
     private Button submitButton;
 
-    private Random random = new Random();
+    private SecureRandom random = new SecureRandom();
 
     public WebElement getRandomDropdown() {
         return dropdown.get(random.nextInt(dropdown.size()));
@@ -42,10 +44,13 @@ public class SettingsPage extends BasePage {
 
     public void selectNewRandomDropdownOption(String old) {
         Wait.waitOnElementToBeVisible(activeDropdown);
-        dropdownOption.stream()
+        Optional<WebElement> newOption = dropdownOption.stream()
                 .filter(el -> !el.getText().equals(old))
-                .findFirst()
-                .get()
+                .findFirst();
+        if (newOption.isEmpty()) {
+            throw new NotFoundException();
+        }
+        newOption.get()
                 .click();
     }
 

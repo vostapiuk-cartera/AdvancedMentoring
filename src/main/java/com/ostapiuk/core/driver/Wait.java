@@ -4,6 +4,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class Wait {
+
+    private Wait() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static void waitOnElementToBeClickable(WebElement webElement) {
         DriverWaitProvider.getInstance().until(ExpectedConditions.elementToBeClickable(webElement));
     }

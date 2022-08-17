@@ -8,6 +8,10 @@ import org.openqa.selenium.TakesScreenshot;
 
 public class AllureAttachment {
 
+    private AllureAttachment() {
+        throw new IllegalStateException("Utility class");
+    }
+
     /**
      * Screenshot attachments for Allure
      */

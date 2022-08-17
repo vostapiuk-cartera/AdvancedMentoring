@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 public class DataObjectsProvider {
 
-    public static final List<UserEntity> USERS = Objects.requireNonNull(JsonParser.getJsonEntity()).getUsers();
+    private static final List<UserEntity> USERS = Objects.requireNonNull(JsonParser.getJsonEntity()).getUsers();
 
     @DataProvider(name = "providePortalUsers")
     public Iterator<Object[]> provideUsers() {

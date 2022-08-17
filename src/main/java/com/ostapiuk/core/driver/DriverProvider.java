@@ -11,13 +11,12 @@ public class DriverProvider {
     private static WebDriver driver = null;
 
     private DriverProvider() {
-        driver = DriverProviderFactory.CHROME.create();
-        setTimeout();
     }
 
     public static WebDriver getDriver() {
         if (Objects.isNull(driver)) {
-            new DriverProvider();
+            driver = DriverProviderFactory.CHROME.create();
+            setTimeout();
         }
         return driver;
     }
