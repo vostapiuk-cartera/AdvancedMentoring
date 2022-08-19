@@ -7,13 +7,15 @@ import com.ostapiuk.core.properties.ConfigProperties;
 import com.ostapiuk.core.providers.DataObjectsProvider;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class PortalLoginTest extends BaseTest {
 
     @BeforeMethod
-    public void initializeFields() {
-        DriverProvider.getDriver().get(ConfigProperties.getBaseUrlProperty());
+    @Parameters("browser")
+    public void initializeFields(String browser) {
+        DriverProvider.getBrowserDriver(browser).get(ConfigProperties.getBaseUrlProperty());
     }
 
     @Test(timeOut = 300000, dataProvider = "providePortalUsers", dataProviderClass = DataObjectsProvider.class)

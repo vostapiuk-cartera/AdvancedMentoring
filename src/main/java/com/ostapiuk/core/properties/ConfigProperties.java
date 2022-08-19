@@ -39,6 +39,10 @@ public class ConfigProperties {
     }
 
     public static String getDriverUrlProperty() {
-        return getProperty("driver_url");
+        return getProperty("driver_chrome_url");
+    }
+
+    public static String getDriverFirefoxUrlProperty() {
+        return getProperty("driver_firefox_url");
     }
 }

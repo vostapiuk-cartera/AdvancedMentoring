@@ -21,6 +21,18 @@ public class DriverProvider {
         return driver;
     }
 
+    public static WebDriver getBrowserDriver(String browser) {
+        if (Objects.isNull(driver)) {
+            if (browser.equals("chrome")) {
+                driver = DriverProviderFactory.CHROME.create();
+            } else if (browser.equals("firefox")) {
+                driver = DriverProviderFactory.FIREFOX.create();
+            }
+            setTimeout();
+        }
+        return driver;
+    }
+
     public static void quit() {
         if (Objects.nonNull(driver)) {
             driver.quit();

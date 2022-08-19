@@ -7,6 +7,7 @@ import com.ostapiuk.core.driver.DriverProvider;
 import com.ostapiuk.core.properties.ConfigProperties;
 import com.ostapiuk.core.providers.DataObjectsProvider;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class UserActionsWithDashboardTest extends BaseTest {
@@ -16,8 +17,9 @@ public class UserActionsWithDashboardTest extends BaseTest {
     UserActionsValidator userActionsValidator;
 
     @BeforeMethod
-    public void initializeFields() {
-        DriverProvider.getDriver().get(ConfigProperties.getBaseSecureUrlProperty());
+    @Parameters("browser")
+    public void initializeFields(String browser) {
+        DriverProvider.getBrowserDriver(browser).get(ConfigProperties.getBaseSecureUrlProperty());
         logInBO = new LogInBO();
         userActionsBO = new UserActionsBO();
         userActionsValidator = new UserActionsValidator();
