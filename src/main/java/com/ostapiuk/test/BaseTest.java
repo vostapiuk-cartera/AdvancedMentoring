@@ -1,4 +1,4 @@
-package com.ostapiuk;
+package com.ostapiuk.test;
 
 import com.ostapiuk.core.driver.DriverProvider;
 import com.ostapiuk.core.listener.TestListener;

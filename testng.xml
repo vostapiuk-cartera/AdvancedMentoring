@@ -1,12 +1,12 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name = "Suite">
-    <test name = "Test">
+<suite name = "PortalSuite">
+    <test name = "PortalTest">
         <classes>
-            <class name = "com.ostapiuk.PortalHealthCheckTest" />
-            <class name = "com.ostapiuk.PortalLoginTest" />
-            <class name = "com.ostapiuk.UserActionsWithDashboardTest" />
-            <class name = "com.ostapiuk.UserCanChangeGeneralSettingsTest" />
+            <class name = "com.ostapiuk.test.PortalHealthCheckTest" />
+            <class name = "com.ostapiuk.test.PortalLoginTest" />
+            <class name = "com.ostapiuk.test.UserActionsWithDashboardTest" />
+            <class name = "com.ostapiuk.test.UserCanChangeGeneralSettingsTest" />
         </classes>
     </test>
 </suite>

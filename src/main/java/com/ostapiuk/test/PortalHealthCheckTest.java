@@ -1,4 +1,4 @@
-package com.ostapiuk;
+package com.ostapiuk.test;
 
 import com.ostapiuk.business.validator.PortalHealthCheckValidator;
 import org.testng.annotations.Test;
