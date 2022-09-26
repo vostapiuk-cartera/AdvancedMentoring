@@ -15,19 +15,26 @@ public class HomePage extends BasePage {
     @FindBy(css = "[href*='settings']")
     private Button settingsButton;
 
+    @FindBy(css = "[href*='launches']")
+    private Button launchesButton;
+
     @FindBy(css = "div[class^='addDashboardButton'] button")
     private Button addDashboardButton;
 
     @FindBy(css = "[class*='gridRow__grid-row'] a")
     private List<WebElement> dashboards;
 
-    public boolean isPageViewDisplayed() {
+    public boolean waitOnPageViewDisplay() {
         Wait.waitOnElementToBeVisible(pageView);
         return pageView.isDisplayed();
     }
 
     public void clickSettingsButton() {
         settingsButton.click();
+    }
+
+    public void clickLaunchesButton() {
+        launchesButton.click();
     }
 
     public void clickAddDashboardButton() {

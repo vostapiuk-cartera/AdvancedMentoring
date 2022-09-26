@@ -21,4 +21,8 @@ public class NotificationPage extends BasePage {
     public String getNotificationText() {
         return text.getText();
     }
+
+    public void closeNotification() {
+        root.click();
+    }
 }

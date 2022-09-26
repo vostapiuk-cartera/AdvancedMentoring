@@ -1,0 +1,10 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name = "Portal Launches Suite" parallel="methods" data-provider-thread-count="2" verbose="2">
+    <test name = "Portal Launches Positive Tests">
+        <classes>
+            <class name = "com.ostapiuk.test.LaunchHasDataTest" />
+            <class name = "com.ostapiuk.test.LaunchSuitesHasDataTest" />
+        </classes>
+    </test>
+</suite>

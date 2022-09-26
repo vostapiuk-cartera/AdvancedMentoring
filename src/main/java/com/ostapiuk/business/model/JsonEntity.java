@@ -12,4 +12,6 @@ public class JsonEntity {
     private DataEntity data;
 
     private List<UserEntity> users;
+
+    private List<LaunchEntity> launches;
 }

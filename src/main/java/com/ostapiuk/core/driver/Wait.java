@@ -1,5 +1,6 @@
 package com.ostapiuk.core.driver;
 
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,6 +22,7 @@ public class Wait {
     public static void waitOnElementUntilClick(WebElement webElement) {
         DriverWaitProvider.getInstance()
                 .ignoring(StaleElementReferenceException.class)
+                .ignoring(ElementClickInterceptedException.class)
                 .until(driver -> {
                     webElement.click();
                     return true;

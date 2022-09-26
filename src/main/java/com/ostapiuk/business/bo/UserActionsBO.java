@@ -22,11 +22,6 @@ public class UserActionsBO {
         dashboardPage = new DashboardPage();
     }
 
-    public void openGeneralSettings() {
-        homePage.isPageViewDisplayed();
-        homePage.clickSettingsButton();
-    }
-
     public void changeGeneralSettings() {
         WebElement dropdown = settingsPage.getFirstDropdown();
         String oldValue = settingsPage.getDropdownValue(dropdown);
