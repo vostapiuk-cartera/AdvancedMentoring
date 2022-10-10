@@ -5,7 +5,7 @@ import com.ostapiuk.business.bo.UserActionsBO;
 import com.ostapiuk.business.validator.UserActionsValidator;
 import com.ostapiuk.core.driver.DriverProvider;
 import com.ostapiuk.core.properties.ConfigProperties;
-import com.ostapiuk.core.providers.DataObjectsProvider;
+import com.ostapiuk.core.data_providers.UsersProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -25,7 +25,7 @@ public class UserActionsWithDashboardTest extends BaseTest {
 
     @Test(timeOut = 300000)
     public void verifyUserActionsWithDashboard() {
-        logInBO.logIn(DataObjectsProvider.getSingleUser().getEmail(), DataObjectsProvider.getSingleUser().getPassword());
+        logInBO.logIn(UsersProvider.getSingleUser().getEmail(), UsersProvider.getSingleUser().getPassword());
         userActionsBO.createNewDashboard();
         userActionsValidator.verifyDashboardIsAdded();
         userActionsBO.updateDashboard();

@@ -41,4 +41,12 @@ public class ConfigProperties {
     public static String getDriverUrlProperty() {
         return getProperty("driver_url");
     }
+
+    public static String getDriverNameProperty() {
+        return getProperty("driver_name");
+    }
+
+    public static String getDriverPathProperty() {
+        return getProperty("driver_path");
+    }
 }

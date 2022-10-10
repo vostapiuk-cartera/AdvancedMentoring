@@ -17,5 +17,37 @@
       "password": "erebus",
       "expected": true
     }
+  ],
+  "launches": [
+    {
+      "launchName": "19"
+    },
+    {
+      "launchName": "11"
+    },
+    {
+      "launchName": "18"
+    },
+    {
+      "launchName": "23"
+    },
+    {
+      "launchName": "12"
+    },
+    {
+      "launchName": "27"
+    },
+    {
+      "launchName": "22"
+    },
+    {
+      "launchName": "13"
+    },
+    {
+      "launchName": "17"
+    },
+    {
+      "launchName": "14"
+    }
   ]
 }

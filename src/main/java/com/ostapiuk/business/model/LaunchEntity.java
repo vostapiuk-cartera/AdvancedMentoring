@@ -1,0 +1,11 @@
+package com.ostapiuk.business.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class LaunchEntity {
+
+    private String launchName;
+}
