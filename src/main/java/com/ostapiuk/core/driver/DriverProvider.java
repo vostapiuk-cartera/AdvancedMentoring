@@ -1,5 +1,6 @@
 package com.ostapiuk.core.driver;
 
+import com.codeborne.selenide.Selenide;
 import com.ostapiuk.core.properties.ConfigProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,11 +20,7 @@ public class DriverProvider {
     }
 
     public static WebDriver getDriver() {
-        if (Objects.isNull(driver.get())) {
-            driver.set(new ChromeDriver());
-            setTimeout();
-        }
-        return driver.get();
+        return Selenide.webdriver().object();
     }
 
     public static void quit() {
