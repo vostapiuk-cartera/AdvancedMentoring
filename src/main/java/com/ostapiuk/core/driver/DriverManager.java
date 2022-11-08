@@ -5,13 +5,15 @@ import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.testng.ScreenShooter;
 import com.ostapiuk.core.listener.Highlighter;
 import com.ostapiuk.core.properties.ConfigProperties;
-import org.openqa.selenium.chrome.ChromeOptions;
+import lombok.SneakyThrows;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.WebDriverRunner.addListener;
 
 public class DriverManager {
 
+    @SneakyThrows
     public static void setUpDriver() {
         if (!WebDriverRunner.hasWebDriverStarted()) {
             Configuration.timeout = 5000;
@@ -21,13 +23,22 @@ public class DriverManager {
             baseUrl = ConfigProperties.getBaseSecureUrlProperty();
             switch (type) {
                 case "chrome":
-                    browser = "chrome";
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--disable-web-security");
-                    browserCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
+                    Configuration.remote = "http://localhost:4444/wd/hub";
+                    Configuration.browser = "chrome";
+                    Configuration.browserSize = "1920x1080";
+                    DesiredCapabilities capabilities = new DesiredCapabilities();
+                    capabilities.setCapability("enableVNC", true);
+                    capabilities.setCapability("enableVideo", true);
+                    Configuration.browserCapabilities = capabilities;
                     break;
                 case "firefox":
-                    browser = "firefox";
+                    Configuration.remote = "http://localhost:4444/wd/hub";
+                    Configuration.browser = "firefox";
+                    Configuration.browserSize = "1920x1080";
+                    DesiredCapabilities firefoxCapabilities = new DesiredCapabilities();
+                    firefoxCapabilities.setCapability("enableVNC", true);
+                    firefoxCapabilities.setCapability("enableVideo", true);
+                    Configuration.browserCapabilities = firefoxCapabilities;
                     break;
             }
             addListener(new Highlighter());
