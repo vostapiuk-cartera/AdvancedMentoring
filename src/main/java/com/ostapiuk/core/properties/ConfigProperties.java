@@ -49,4 +49,8 @@ public class ConfigProperties {
     public static String getDriverPathProperty() {
         return getProperty("driver_path");
     }
+
+    public static String getDriverTypeProperty() {
+        return getProperty("driver_type");
+    }
 }

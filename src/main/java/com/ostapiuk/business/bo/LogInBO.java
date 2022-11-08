@@ -1,13 +1,13 @@
 package com.ostapiuk.business.bo;
 
-import com.ostapiuk.business.po.LoginPage;
+import com.ostapiuk.business.po.SignInPage;
 import com.ostapiuk.core.logger.Log;
 
 public class LogInBO {
-    private LoginPage loginPage;
+    private SignInPage loginPage;
 
     public LogInBO() {
-        loginPage = new LoginPage();
+        loginPage = new SignInPage();
     }
 
     public void logIn(String userEmail, String userPassword) {

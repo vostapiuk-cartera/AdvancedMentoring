@@ -32,4 +32,8 @@ public class NavigationBO {
         openLaunchesTable();
         launchesPage.clickOnLaunchWithName(suite);
     }
+
+    public void openDashboard() {
+        homePage.clickOnDashboard();
+    }
 }
