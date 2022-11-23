@@ -27,8 +27,28 @@ public class DataProperties {
         return getDataEntity().getDashboardDescription();
     }
 
+    public static Boolean getDashboardShareValue() {
+        return getDataEntity().getDashboardShareValue();
+    }
+
     public static String getDashboardNewName() {
         return getDataEntity().getDashboardNewName();
+    }
+
+    public static String getDashboardNewDescription() {
+        return getDataEntity().getDashboardNewDescription();
+    }
+
+    public static Boolean getDashboardNewShareValue() {
+        return getDataEntity().getDashboardNewShareValue();
+    }
+
+    public static String getWidgetType() {
+        return getDataEntity().getWidgetType();
+    }
+
+    public static String getWidgetNewType() {
+        return getDataEntity().getWidgetNewType();
     }
 
     private DataProperties() {

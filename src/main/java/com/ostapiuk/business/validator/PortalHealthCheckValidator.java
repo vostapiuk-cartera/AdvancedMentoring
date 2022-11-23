@@ -11,8 +11,6 @@ public class PortalHealthCheckValidator {
 
     public void verifyReportPortalIsUp() {
         Response portalResponse = new ReportPortalAPIClient().getReportPortalStatus();
-        Log.log("Verify Report portal API returns OK status code");
-        portalResponse.then().assertThat().statusCode(HttpStatus.SC_OK);
         Log.log("Verify Report portal API return correct version of Report portal");
         String expectedVersion = portalResponse.then().extract().path("ui.build.version");
         Assert.assertEquals(expectedVersion, DataProperties.getPortalVersion(), "Report portal version is wrong");
