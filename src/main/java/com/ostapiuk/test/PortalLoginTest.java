@@ -1,6 +1,7 @@
 package com.ostapiuk.test;
 
 import com.ostapiuk.business.bo.LogInBO;
+import com.ostapiuk.business.model.UserEntity;
 import com.ostapiuk.business.validator.LogInValidator;
 import com.ostapiuk.core.driver.DriverProvider;
 import com.ostapiuk.core.properties.ConfigProperties;
@@ -17,11 +18,11 @@ public class PortalLoginTest extends BaseTest {
     }
 
     @Test(timeOut = 300000, dataProvider = "providePortalUsers", dataProviderClass = UsersProvider.class)
-    public void verifyLogin(String userEmail, String userPassword, boolean expectedResult) {
+    public void verifyLogin(UserEntity user) {
         LogInBO logInBO = new LogInBO();
-        logInBO.logIn(userEmail, userPassword);
+        logInBO.logIn(user);
         LogInValidator logInValidator = new LogInValidator();
-        logInValidator.verifyLogin(expectedResult);
+        logInValidator.verifyLogin(user.isExpected());
     }
 
     @AfterMethod

@@ -7,7 +7,7 @@ import org.testng.Assert;
 
 public class WidgetResponsesValidator {
 
-    public void verifyWidgetCreationResponse(WidgetCreationResponse widgetCreationResponse, String widgetId, Integer dashboardId) {
+    public void verifyWidgetCreationResponse(WidgetCreationResponse widgetCreationResponse, Integer widgetId, Integer dashboardId) {
         Assert.assertNotNull(widgetCreationResponse.getMessage(), "Id is null");
         Assert.assertEquals(widgetCreationResponse.getMessage(), "Widget with ID = '" + widgetId + "' was successfully added to the dashboard with ID = '" + dashboardId + "'", "Wrong Message text");
     }
@@ -17,7 +17,7 @@ public class WidgetResponsesValidator {
         Assert.assertEquals(widgetModificationResponse.getMessage(), "Dashboard with ID = '" + dashboardId + "' successfully updated", "Wrong Message text");
     }
 
-    public void verifyWidgetDeletionResponse(WidgetDeletionResponse widgetDeletionResponse, String widgetId, Integer dashboardId) {
+    public void verifyWidgetDeletionResponse(WidgetDeletionResponse widgetDeletionResponse, Integer widgetId, Integer dashboardId) {
         Assert.assertNotNull(widgetDeletionResponse.getMessage(), "Message is null");
         Assert.assertEquals(widgetDeletionResponse.getMessage(), "Widget with ID = '" + widgetId + "' was successfully removed from the dashboard with ID = '" + dashboardId + "'", "Wrong Message text");
     }

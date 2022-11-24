@@ -6,8 +6,8 @@ import com.ostapiuk.business.validator.DashboardResponsesValidator;
 import com.ostapiuk.core.client.ReportPortalAPIClient;
 import com.ostapiuk.core.data_providers.DashboardsProvider;
 import com.ostapiuk.core.data_providers.UsersProvider;
+import com.ostapiuk.core.utils.FilePath;
 import com.ostapiuk.core.utils.IdFile;
-import com.ostapiuk.core.utils.IdSource;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -20,8 +20,8 @@ public class ModifyDashboardTest {
     @BeforeClass
     public void initializeFields() {
         dashboardResponsesValidator = new DashboardResponsesValidator();
-        IdSource idSource = new IdSource();
-        dashboardId = idSource.readIdFromFile(IdFile.DASHBOARD_FILE);
+        IdFile idFile = new IdFile();
+        dashboardId = idFile.readIdFromFile(FilePath.DASHBOARD_FILE);
         projectName = UsersProvider.getSingleUser().getEmail() + "_personal";
     }
 

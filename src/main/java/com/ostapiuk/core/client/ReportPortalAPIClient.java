@@ -6,6 +6,7 @@ import com.ostapiuk.business.model.api.dashboard.DashboardEntity;
 import com.ostapiuk.business.model.api.dashboard.DashboardModificationResponse;
 import com.ostapiuk.business.model.api.widget.*;
 import com.ostapiuk.core.properties.ConfigProperties;
+import com.ostapiuk.core.properties.TokenProperty;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
@@ -30,7 +31,7 @@ public class ReportPortalAPIClient {
 
     public RequestSpecification initAuthorize() {
         return given().spec(initSpec())
-                .auth().oauth2(ConfigProperties.getOauthToken());
+                .auth().oauth2(TokenProperty.readTokenFromFile());
     }
 
     public Response getReportPortalStatus() {
@@ -77,7 +78,15 @@ public class ReportPortalAPIClient {
                 .extract().as(WidgetCreationResponse.class);
     }
 
-    public WidgetDeletionResponse deleteWidgetById(String projectName, Integer dashboardId, String widgetId) {
+    public WidgetLoadResponse getWidgetForProject(String projectName) {
+        return initAuthorize()
+                .when().pathParam("projectName", projectName)
+                .get(EndPoint.GET_WIDGET)
+                .then().statusCode(SC_OK)
+                .extract().as(WidgetLoadResponse.class);
+    }
+
+    public WidgetDeletionResponse deleteWidgetById(String projectName, Integer dashboardId, Integer widgetId) {
         return initAuthorize()
                 .when().pathParam("projectName", projectName)
                 .when().pathParam("dashboardId", dashboardId)

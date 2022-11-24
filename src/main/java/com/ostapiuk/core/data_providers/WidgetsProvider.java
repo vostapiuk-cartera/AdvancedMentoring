@@ -25,7 +25,7 @@ public class WidgetsProvider {
         return WidgetEntity.builder()
                 .addWidget(
                         AddWidgetEntity.builder()
-                                .widgetId(Integer.parseInt(ConfigProperties.getWidgetIdProperty()))
+                                .widgetId(WidgetIdProvider.getExistingWidgetId())
                                 .share(DataProperties.getDashboardShareValue())
                                 .widgetPosition(
                                         WidgetPositionEntity.builder()
@@ -51,7 +51,7 @@ public class WidgetsProvider {
                 .share(DataProperties.getDashboardShareValue())
                 .updateWidgets(new UpdateWidgetEntity[]{
                                 UpdateWidgetEntity.builder()
-                                        .widgetId(Integer.parseInt(ConfigProperties.getWidgetIdProperty()))
+                                        .widgetId(WidgetIdProvider.getExistingWidgetId())
                                         .share(DataProperties.getDashboardShareValue())
                                         .widgetPosition(
                                                 WidgetPositionEntity.builder()

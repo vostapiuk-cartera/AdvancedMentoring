@@ -54,11 +54,4 @@ public class ConfigProperties {
         return getProperty("driver_type");
     }
 
-    public static String getWidgetIdProperty() {
-        return getProperty("widget_id");
-    }
-
-    public static String getOauthToken() {
-        return getProperty("oauth_token");
-    }
 }

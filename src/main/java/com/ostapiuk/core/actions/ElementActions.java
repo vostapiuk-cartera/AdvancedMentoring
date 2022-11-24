@@ -15,12 +15,11 @@ public class ElementActions {
                 .perform();
     }
 
-    public static void resize(SelenideElement element) {
+    public static void resize(SelenideElement element, int maxValue) {
         element.should(Condition.exist);
         SecureRandom random = new SecureRandom();
         int min = 0;
-        int max = 50;
-        int offset = random.nextInt(max - min + 1) + min;
+        int offset = random.nextInt(maxValue - min + 1) + min;
         Selenide.actions()
                 .moveToElement(element)
                 .clickAndHold()

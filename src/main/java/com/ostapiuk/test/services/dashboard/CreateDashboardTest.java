@@ -6,21 +6,21 @@ import com.ostapiuk.business.validator.DashboardResponsesValidator;
 import com.ostapiuk.core.client.ReportPortalAPIClient;
 import com.ostapiuk.core.data_providers.DashboardsProvider;
 import com.ostapiuk.core.data_providers.UsersProvider;
+import com.ostapiuk.core.utils.FilePath;
 import com.ostapiuk.core.utils.IdFile;
-import com.ostapiuk.core.utils.IdSource;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class CreateDashboardTest {
 
     private DashboardResponsesValidator dashboardResponsesValidator;
-    private IdSource idSource;
+    private IdFile idFile;
     private String projectName;
 
     @BeforeClass
     public void initializeFields() {
         dashboardResponsesValidator = new DashboardResponsesValidator();
-        idSource = new IdSource();
+        idFile = new IdFile();
         projectName = UsersProvider.getSingleUser().getEmail() + "_personal";
     }
 
@@ -30,6 +30,6 @@ public class CreateDashboardTest {
                 .createDashboard(dashboard, projectName);
         dashboardResponsesValidator.verifyDashboardCreationResponse(dashboardCreationResponse);
 
-        idSource.writeIdToFile(dashboardCreationResponse.getId(), IdFile.DASHBOARD_FILE);
+        idFile.writeIdToFile(dashboardCreationResponse.getId(), FilePath.DASHBOARD_FILE);
     }
 }

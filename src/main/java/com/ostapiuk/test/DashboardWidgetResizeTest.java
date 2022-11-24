@@ -29,7 +29,7 @@ public class DashboardWidgetResizeTest {
         open("/");
         resizeBO = new ResizeBO();
         resizeValidator = new WidgetResizeValidator();
-        new LogInBO().logIn(UsersProvider.getSingleUser().getEmail(), UsersProvider.getSingleUser().getPassword());
+        new LogInBO().logIn(UsersProvider.getSingleUser());
         new NavigationBO().openDashboard();
     }
 
