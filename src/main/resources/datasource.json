@@ -4,7 +4,12 @@
     "successLogin": "Signed in successfully",
     "dashboardName": "Epam",
     "dashboardDescription": "Dashboard for test",
-    "dashboardNewName": "Test"
+    "dashboardShareValue": true,
+    "dashboardNewName": "TestVolo",
+    "dashboardNewDescription": "DescriptionVolo",
+    "dashboardNewShareValue": false,
+    "widgetType": "statisticTrend",
+    "widgetNewType": "casesTrend"
   },
   "users": [
     {

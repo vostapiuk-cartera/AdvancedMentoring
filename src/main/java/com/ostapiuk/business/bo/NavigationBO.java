@@ -36,4 +36,9 @@ public class NavigationBO {
     public void openDashboard() {
         homePage.clickOnDashboard();
     }
+
+    public void openDashboardByName(String name) {
+        homePage.waitOnPageViewDisplay();
+        homePage.clickOnDashboardByName(name);
+    }
 }

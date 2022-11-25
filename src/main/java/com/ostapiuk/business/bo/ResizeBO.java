@@ -7,6 +7,7 @@ import com.ostapiuk.core.driver.Wait;
 import org.openqa.selenium.Point;
 
 public class ResizeBO {
+    private static int MAX_RESIZE = 10;
     DashboardPage dashboardPage;
 
     public ResizeBO() {
@@ -21,7 +22,7 @@ public class ResizeBO {
         SelenideElement widget = dashboardPage.getWidgetByNumber(widgetNumber);
         Wait.waitOnElementToBeVisible(widget);
         ElementActions.scrollByJS(widget);
-        ElementActions.resize(dashboardPage.getWidgetResizeButton(widget));
+        ElementActions.resize(dashboardPage.getWidgetResizeButton(widget), MAX_RESIZE);
     }
 
     public Point getWidgetContentSize(int widgetNumber) {

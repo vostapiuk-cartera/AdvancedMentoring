@@ -14,5 +14,15 @@ public class DataEntity {
 
     private String dashboardDescription;
 
+    private Boolean dashboardShareValue;
+
     private String dashboardNewName;
+
+    private String dashboardNewDescription;
+
+    private Boolean dashboardNewShareValue;
+
+    private String widgetType;
+
+    private String widgetNewType;
 }

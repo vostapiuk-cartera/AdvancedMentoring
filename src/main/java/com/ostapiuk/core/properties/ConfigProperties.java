@@ -53,4 +53,5 @@ public class ConfigProperties {
     public static String getDriverTypeProperty() {
         return getProperty("driver_type");
     }
+
 }

@@ -1,0 +1,14 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Portal Dashboard Widgets Suite">
+    <test name="Portal Dashboard Widgets Positive Tests">
+        <classes>
+            <class name="com.ostapiuk.test.services.dashboard.CreateDashboardTest"/>
+            <class name="com.ostapiuk.test.services.dashboard.ModifyDashboardTest"/>
+            <class name="com.ostapiuk.test.services.widget.CreateWidgetTest"/>
+            <class name="com.ostapiuk.test.services.widget.ModifyWidgetTest"/>
+            <class name="com.ostapiuk.test.services.widget.DeleteWidgetTest"/>
+            <class name="com.ostapiuk.test.services.dashboard.DeleteDashboardTest"/>
+        </classes>
+    </test>
+</suite>

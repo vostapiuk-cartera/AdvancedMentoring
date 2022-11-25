@@ -25,7 +25,7 @@ public class UserActionsWithDashboardTest extends BaseTest {
 
     @Test(timeOut = 300000)
     public void verifyUserActionsWithDashboard() {
-        logInBO.logIn(UsersProvider.getSingleUser().getEmail(), UsersProvider.getSingleUser().getPassword());
+        logInBO.logIn(UsersProvider.getSingleUser());
         userActionsBO.createNewDashboard();
         userActionsValidator.verifyDashboardIsAdded();
         userActionsBO.updateDashboard();

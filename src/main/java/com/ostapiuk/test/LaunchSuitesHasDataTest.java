@@ -25,7 +25,7 @@ public class LaunchSuitesHasDataTest extends BaseTest {
         NavigationBO navigationBO = new NavigationBO();
         DataPresenceValidator dataPresenceValidator = new DataPresenceValidator();
         Log.log("Verify suite for launch #" + launchName + " has data");
-        logInBO.logIn(UsersProvider.getSingleUser().getEmail(), UsersProvider.getSingleUser().getPassword());
+        logInBO.logIn(UsersProvider.getSingleUser());
         navigationBO.openLaunchesTestSuite(launchName);
         dataPresenceValidator.verifyLaunchSuiteContainsData();
     }

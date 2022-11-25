@@ -25,7 +25,7 @@ public class LaunchHasDataTest extends BaseTest {
         NavigationBO navigationBO = new NavigationBO();
         DataPresenceValidator dataPresenceValidator = new DataPresenceValidator();
         Log.log("Verify launch #" + launchName + " has data");
-        logInBO.logIn(UsersProvider.getSingleUser().getEmail(), UsersProvider.getSingleUser().getPassword());
+        logInBO.logIn(UsersProvider.getSingleUser());
         navigationBO.openLaunchesTable();
         dataPresenceValidator.verifyLaunchContainsData(launchName);
     }
@@ -36,7 +36,7 @@ public class LaunchHasDataTest extends BaseTest {
         NavigationBO navigationBO = new NavigationBO();
         DataPresenceValidator dataPresenceValidator = new DataPresenceValidator();
         Log.log("Verify launch #" + launchName + " has filled fields");
-        logInBO.logIn(UsersProvider.getSingleUser().getEmail(), UsersProvider.getSingleUser().getPassword());
+        logInBO.logIn(UsersProvider.getSingleUser());
         navigationBO.openLaunchesTable();
         dataPresenceValidator.verifyLaunchHasFilledFields(launchName);
     }
